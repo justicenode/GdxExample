@@ -1,0 +1,96 @@
+package com.nyp.gameexample.gameobjects;
+
+public enum TileType {
+    BOX("box"),
+    BOX_ALT("boxAlt"),
+    BOX_COIN("boxCoin"),
+    BOX_COIN_DISABLED("boxCoinDisabled"),
+    BOX_COIN_ALT("boxCoinAlt"),
+    BOX_COIN_ALT_DISABLED("boxCoinAltDisabled"),
+    BOX_EMPTY("boxEmpty"),
+    BOX_EXPLOSIVE("boxExplosive"),
+    BOX_EXPLOSIVE_DISABLED("boxExplosiveDisabled"),
+    BOX_EXPLOSIVE_ALT("boxExplosiveAlt"),
+    BOX_ITEM("boxItem"),
+    BOX_ITEM_DISABLED("boxItemDisabled"),
+    BOX_ITEM_ALT("boxItemAlt"),
+    BOX_ITEM_ALT_DISABLED("boxItemAltDisabled"),
+    BOX_WARNING("boxWarning"),
+    BRICK_WALL("brickWall"),
+    BRIDGE("bridge"),
+    BRIDGE_LOGS("bridgeLogs"),
+    CASTLE("castle"),
+    CASTLE_CENTER("castleCenter"),
+    CASTLE_CENTER_ROUNDED("castleCenterRounded"),
+    CASTLE_CLIFF_LEFT("castleCliffLeft"),
+    CASTLE_CLIFF_LEFT_ALT("castleCliffLeftAlt"),
+    CASTLE_CLIFF_RIGHT("castleCliffRight"),
+    CASTLE_CLIFF_RIGHT_ALT("castleCliffRightAlt"),
+    CASTLE_HALF("castleHalf"),
+    CASTLE_HALF_LEFT("castleHalfLeft"),
+    CASTLE_HALF_MID("castleHalfMid"),
+    CASTLE_HALF_RIGHT("castleHalfRight"),
+    CASTLE_HILL_LEFT("castleHillLeft"),
+    CASTLE_HILL_LEFT2("castleHillLeft2"),
+    CASTLE_HILL_RIGHT("castleHillRight"),
+    CASTLE_HILL_RIGHT2("castleHillRight2"),
+    CASTLE_LEDGE_LEFT("castleLedgeLeft"),
+    CASTLE_LEDGE_RIGHT("castleLedgeRight"),
+    CASTLE_LEFT("castleLeft"),
+    CASTLE_MID("castleMid"),
+    CASTLE_RIGHT("castleRight"),
+    DIRT("dirt"),
+    DIRT_CENTER("dirtCenter"),
+    DIRT_CENTER_ROUNDED("dirtCenterRounded"),
+    DIRT_CLIFF_LEFT("dirtCliffLeft"),
+    DIRT_CLIFF_LEFT_ALT("dirtCliffLeftAlt"),
+    DIRT_CLIFF_RIGHT("dirtCliffRight"),
+    DIRT_CLIFF_RIGHT_ALT("dirtCliffRightAlt"),
+    DIRT_HALF("dirtHalf"),
+    DIRT_HALF_LEFT("dirtHalfLeft"),
+    DIRT_HALF_MID("dirtHalfMid"),
+    DIRT_HALF_RIGHT("dirtHalfRight"),
+    DIRT_HILL_LEFT("dirtHillLeft"),
+    DIRT_HILL_LEFT2("dirtHillLeft2"),
+    DIRT_HILL_RIGHT("dirtHillRight"),
+    DIRT_HILL_RIGHT2("dirtHillRight2"),
+    DIRT_LEDGE_LEFT("dirtLedgeLeft"),
+    DIRT_LEDGE_RIGHT("dirtLedgeRight"),
+    DIRT_LEFT("dirtLeft"),
+    DIRT_MID("dirtMid"),
+    DIRT_RIGHT("dirtRight"),
+    DOOR_CLOSED_MID("door_closedMid"),
+    DOOR_CLOSED_TOP("door_closedTop"),
+    DOOR_OPEN_MID("door_openMid"),
+    DOOR_OPEN_TOP("door_openTop"),
+    FENCE("fence"),
+    FENCE_BROKEN("fenceBroken"),
+    GRASS("grass"),
+
+    GRASS_CLIFF_LEFT("grassCliffLeft"),
+    GRASS_CLIFF_RIGHT("grassCliffRight"),
+
+    GRASS_HALF("grassHalf"),
+    GRASS_HALF_LEFT("grassHalfLeft"),
+    GRASS_HALF_MID("grassHalfMid"),
+    GRASS_HALF_RIGHT("grassHalfRight"),
+    GRASS_MID("grassMid"),
+    GRASS_LEFT("grassLeft"),
+    GRASS_RIGHT("grassRight"),
+    GRASS_CENTER("grassCenter"),
+
+    SIGN("sign"),
+    SIGN_EXIT("signExit"),
+    SIGN_LEFT("signLeft"),
+    SIGN_RIGHT("signRight");
+
+    private final String fileName;
+
+    TileType(String fileName) {
+        this.fileName = fileName;
+    }
+
+    String getFileName() {
+        return fileName;
+    }
+}
