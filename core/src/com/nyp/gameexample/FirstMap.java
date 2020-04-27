@@ -6,13 +6,19 @@ import com.nyp.gameexample.gameobjects.TileType;
 
 import java.util.ArrayList;
 
+/**
+ * Example map
+ * @author Carlo Meier
+ */
 class FirstMap extends Map {
     public FirstMap(Player player) {
         super(new ArrayList<>(), player);
 
+        // Set starting position
         posX = 720;
         posY = 180;
 
+        // Add tiles
         tiles.add(new Tile(TileType.GRASS_LEFT, 0, 1));
         tiles.add(new Tile(TileType.BOX, 0, 2));
         tiles.add(new Tile(TileType.BOX, 0, 3));
@@ -41,9 +47,19 @@ class FirstMap extends Map {
         tiles.add(new Tile(TileType.DIRT_MID, 17, 1));
         tiles.add(new Tile(TileType.DIRT_HILL_LEFT2, 18, 1));
         tiles.add(new Tile(TileType.DIRT_HILL_LEFT, 18, 2));
+        tiles.add(new Tile(TileType.DIRT_CENTER, 19, 1));
+        tiles.add(new Tile(TileType.DIRT_CENTER, 20, 1));
         tiles.add(new Tile(TileType.DIRT_MID, 19, 2));
-        tiles.add(new Tile(TileType.DIRT_RIGHT, 20, 2));
+        tiles.add(new Tile(TileType.DIRT_MID, 20, 2));
+        tiles.add(new Tile(TileType.DIRT_CLIFF_RIGHT, 21, 2));
         tiles.add(new Tile(TileType.DOOR_CLOSED_MID, 19, 3, true));
         tiles.add(new Tile(TileType.DOOR_CLOSED_TOP, 19, 4, true));
+
+        // Add lava underneath for extra dramatic effect
+        for(int i = -6; i < 25; i++) {
+            tiles.add(new Tile(TileType.LIQUID_LAVA_TOP_MID, i, -1));
+            tiles.add(new Tile(TileType.LIQUID_LAVA, i, -2));
+            tiles.add(new Tile(TileType.LIQUID_LAVA, i, -3));
+        }
     }
 }

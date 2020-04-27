@@ -7,6 +7,10 @@ import com.nyp.gameexample.gameobjects.Tile;
 
 import java.util.ArrayList;
 
+/**
+ * Map class that utilises {@link Tile}'s to render
+ * @author Carlo Meier
+ */
 public class Map {
     protected ArrayList<Tile> tiles;
     protected float posX;
@@ -25,7 +29,12 @@ public class Map {
         posY = 0;
     }
 
+    /**
+     * renders the map
+     * @param batch {@link SpriteBatch}
+     */
     public void render(SpriteBatch batch) {
+        // Teleport player upwards if hes halfway stuck in the ground
         if (getGround() < posY) {
             posY = getGround();
         }
@@ -35,26 +44,43 @@ public class Map {
         }
         posY += velocity;
         if (!isGrounded()) {
+            // Increase falling speed
             velocity += gravity;
         } else {
+            // If the player is touching the ground set falling speed to 0
             velocity = 0;
         }
 
+        // Render all tiles
         for (Tile t : tiles) t.render(batch, posX, posY);
     }
 
+    /**
+     * lets the player jump if hes touching the ground
+     */
     public void jump() {
         if (isGrounded()) jumping = true;
     }
 
+    /**
+     * cleanup & free resources
+     */
     public void dispose() {
         tiles.forEach(Tile::dispose);
     }
 
+    /**
+     * determines whether the {@link Player} is touching the ground or not
+     * @return true if the {@link Player} is touching the ground
+     */
     private boolean isGrounded() {
         return posY >= getGround();
     }
 
+    /**
+     * determines the y coordinate at which the {@link Player} should stop falling down
+     * @return y coordinate of ground level
+     */
     private float getGround() {
         float ground = 1000;
         for (Tile t : tiles) {
